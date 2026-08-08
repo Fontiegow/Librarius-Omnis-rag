@@ -1,0 +1,130 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# IDE / Editors
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# Jupyter
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# RAG / AI Data
+# ==============================
+# Uploaded documents
+#data/
+documents/
+uploads/
+
+# Processed / temporary documents
+processed/
+tmp/
+temp/
+
+# Vector databases / indexes
+chroma/
+chromadb/
+vectorstore/
+vector_store/
+faiss_index/
+*.faiss
+*.index
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ==============================
+# Model / ML Artifacts
+# ==============================
+models/
+checkpoints/
+weights/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+
+# ==============================
+# Logs
+# ==============================
+logs/
+*.log
+
+# ==============================
+# Cache
+# ==============================
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================
+# Testing / Coverage
+# ==============================
+.coverage
+htmlcov/
+coverage.xml
+.pytest_cache/
+
+# ==============================
+# OS Files
+# ==============================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# ==============================
+# Secrets / Certificates
+# ==============================
+*.pem
+*.key
+*.crt
+*.p12
+
+# ==============================
+# Local configuration
+# ==============================
+*.local
+config.local.*
