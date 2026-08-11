@@ -1,0 +1,124 @@
+[
+  {
+    "id": "WH40K-039",
+    "question": "Put the following events in chronological order: the Horus Heresy, the Fall of the Eldar, the Great Rift, the War in Heaven, and the Unification Wars.",
+    "ground_truth": {
+      "answer": "War in Heaven → Fall of the Eldar → Unification Wars → Horus Heresy → Great Rift.",
+      "key_facts": [
+        "The War in Heaven is the most ancient of these events",
+        "The Fall of the Eldar occurred long before the Horus Heresy",
+        "The Unification Wars preceded the Great Crusade",
+        "The Horus Heresy occurred in the 31st Millennium",
+        "The Great Rift emerged in the 41st Millennium"
+      ]
+    },
+    "metadata": {
+      "category": "chronology",
+      "difficulty": "hard",
+      "question_type": "chronology",
+      "retrieval_hops": 5,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-040",
+    "question": "What happened between the Emperor's creation of the Primarchs and the beginning of the Great Crusade?",
+    "ground_truth": {
+      "answer": "The Primarchs were scattered through the Warp, the Emperor conducted the Unification Wars, created the early Space Marine Legions, and then began the Great Crusade after reclaiming the Primarchs.",
+      "key_facts": [
+        "The Primarchs were scattered",
+        "The Emperor unified Terra",
+        "The Space Marine Legions were created",
+        "The Great Crusade followed the Unification Wars"
+      ]
+    },
+    "metadata": {
+      "category": "chronology",
+      "difficulty": "hard",
+      "question_type": "chronology",
+      "retrieval_hops": 4,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-041",
+    "question": "What major events occurred between the Council of Nikaea and the Siege of Terra?",
+    "ground_truth": {
+      "answer": "Major events included Magnus's warning, the catastrophic breach of the Imperial Webway, the Burning of Prospero, Horus's rebellion, the expansion of the Traitor war, and the eventual advance on Terra.",
+      "key_facts": [
+        "The Council of Nikaea restricted psychic practices",
+        "Magnus warned the Emperor",
+        "Prospero was attacked",
+        "Horus launched his rebellion",
+        "The Traitor forces eventually reached Terra"
+      ]
+    },
+    "metadata": {
+      "category": "chronology",
+      "difficulty": "hard",
+      "question_type": "chronology",
+      "retrieval_hops": 5,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-042",
+    "question": "How did the Imperium change between the Great Crusade and the 41st Millennium?",
+    "ground_truth": {
+      "answer": "The Imperium changed from an expansionist secular empire led directly by the Emperor into a fragmented, highly bureaucratic, religious, authoritarian civilization centered on worship of the Emperor.",
+      "key_facts": [
+        "The Great Crusade Imperium was officially secular",
+        "The post-Heresy Imperium increasingly worshipped the Emperor",
+        "The Imperium became heavily bureaucratic",
+        "The Imperium became more stagnant and authoritarian"
+      ]
+    },
+    "metadata": {
+      "category": "chronology",
+      "difficulty": "hard",
+      "question_type": "historical_comparison",
+      "retrieval_hops": 4,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-043",
+    "question": "What happened to the Primarchs after the Horus Heresy?",
+    "ground_truth": {
+      "answer": "Many loyalist Primarchs disappeared, died, or entered states of dormancy, while surviving Traitor Primarchs largely became Daemon Primarchs or withdrew into the Eye of Terror and other Warp regions.",
+      "key_facts": [
+        "Several loyalist Primarchs disappeared or died",
+        "Several Traitor Primarchs became Daemon Primarchs",
+        "Guilliman was placed in stasis after being mortally wounded",
+        "The surviving Primarchs became rare figures in the later Imperium"
+      ]
+    },
+    "metadata": {
+      "category": "chronology",
+      "difficulty": "medium",
+      "question_type": "historical",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-044",
+    "question": "Which major events led from the Horus Heresy to the formation of the modern Space Marine Chapters?",
+    "ground_truth": {
+      "answer": "The defeat of Horus led to reforms by Roboute Guilliman, especially the Codex Astartes and the Second Founding, which divided the original Legions into smaller Chapters.",
+      "key_facts": [
+        "Horus was defeated",
+        "Guilliman authored the Codex Astartes",
+        "The Second Founding divided the Legions",
+        "Chapters became the standard organizational structure"
+      ]
+    },
+    "metadata": {
+      "category": "chronology",
+      "difficulty": "hard",
+      "question_type": "causal_chronology",
+      "retrieval_hops": 4,
+      "contains_false_premise": false
+    }
+  }
+]

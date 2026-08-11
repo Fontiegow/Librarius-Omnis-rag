@@ -1,0 +1,215 @@
+[
+  {
+    "id": "WH40K-011",
+    "question": "Why did the Emperor create the Primarchs?",
+    "ground_truth": {
+      "answer": "The Emperor created the Primarchs as genetically engineered superhuman leaders to command the Great Crusade and serve as the foundation for his vision of humanity.",
+      "key_facts": [
+        "The Primarchs were engineered by the Emperor",
+        "They were intended to lead the Great Crusade",
+        "They were central to the Emperor's plans for humanity"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "causal",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-012",
+    "question": "How did Horus become corrupted by Chaos?",
+    "ground_truth": {
+      "answer": "Horus was gradually corrupted through the influence of Chaos, particularly after being wounded on Davin and manipulated by Erebus and other Chaos agents.",
+      "key_facts": [
+        "Horus was wounded on Davin",
+        "Chaos forces manipulated Horus during his recovery",
+        "Erebus played a major role in Horus's corruption",
+        "Horus eventually embraced Chaos"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "causal",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-013",
+    "question": "What events led to the Siege of Terra?",
+    "ground_truth": {
+      "answer": "The Siege of Terra resulted from the Horus Heresy, during which Horus's rebellion brought Traitor forces across the galaxy and eventually to Terra.",
+      "key_facts": [
+        "The Horus Heresy began as a rebellion against the Emperor",
+        "Several Primarchs and Legions joined Horus",
+        "The Traitor forces eventually attacked Terra",
+        "The Siege was the climactic battle of the Heresy"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "causal",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-014",
+    "question": "Why did the Emperor fight Horus aboard the Vengeful Spirit?",
+    "ground_truth": {
+      "answer": "The Emperor boarded the Vengeful Spirit to confront Horus directly and end the rebellion after Horus's forces breached Terra.",
+      "key_facts": [
+        "Horus was aboard the Vengeful Spirit",
+        "The Emperor sought to confront Horus",
+        "The confrontation occurred during the final stage of the Siege of Terra"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "causal",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-015",
+    "question": "How are the Grey Knights connected to the Horus Heresy?",
+    "ground_truth": {
+      "answer": "The Grey Knights were established during the Horus Heresy era as a secret anti-Chaos force intended to defend humanity against daemonic threats.",
+      "key_facts": [
+        "Their creation occurred during the Heresy era",
+        "Malcador was involved in their establishment",
+        "They were designed to fight Chaos and daemons"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "historical_relationship",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-016",
+    "question": "Why is Cadia strategically important to the Imperium?",
+    "ground_truth": {
+      "answer": "Cadia was strategically important because it stood near the Eye of Terror and served as a major defensive barrier against Chaos incursions.",
+      "key_facts": [
+        "Cadia was located near the Eye of Terror",
+        "Cadia was a major Imperial defensive position",
+        "Cadia resisted numerous Black Crusades"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "strategic",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-017",
+    "question": "How did the destruction of Cadia contribute to the formation of the Great Rift?",
+    "ground_truth": {
+      "answer": "Cadia's destruction removed a major stabilizing obstacle near the Eye of Terror, and the resulting Warp disturbance contributed to the expansion of the rift that became the Great Rift.",
+      "key_facts": [
+        "Cadia was destroyed during the 13th Black Crusade",
+        "The Eye of Terror expanded dramatically",
+        "The Great Rift subsequently divided much of the galaxy"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "question_type": "causal",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-018",
+    "question": "What is the relationship between the Adeptus Mechanicus and the Imperium?",
+    "ground_truth": {
+      "answer": "The Adeptus Mechanicus is a powerful semi-autonomous institution allied with the Imperium, providing technology, manufacturing, armies, and technical expertise.",
+      "key_facts": [
+        "The Mechanicus is allied with the Imperium",
+        "Mars retains substantial autonomy",
+        "The Mechanicus supplies technology and military forces"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "relationship",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-019",
+    "question": "Why did the Space Wolves and Thousand Sons become enemies?",
+    "ground_truth": {
+      "answer": "Their conflict grew from ideological hostility, rivalry between Magnus and Leman Russ, and the events surrounding the Council of Nikaea and the Burning of Prospero.",
+      "key_facts": [
+        "Magnus and Russ had a longstanding rivalry",
+        "The Council of Nikaea restricted psychic practices",
+        "Magnus continued using psychic powers",
+        "Russ eventually led the attack on Prospero"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "causal",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-020",
+    "question": "How did the Necrons become dormant for millions of years?",
+    "ground_truth": {
+      "answer": "After the War in Heaven and their conflict with the Old Ones and Aeldari, the Necrons entered vast tomb complexes and remained dormant for millions of years.",
+      "key_facts": [
+        "The Necrons fought in the War in Heaven",
+        "Their civilization entered a period of dormancy",
+        "Necron tomb worlds preserved them for millions of years"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "medium",
+      "question_type": "historical",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-023",
+    "question": "Why did Magnus warn the Emperor?",
+    "ground_truth": {
+      "answer": "Magnus attempted to warn the Emperor that Horus had fallen to Chaos.",
+      "key_facts": [
+        "Magnus discovered that Horus had fallen to Chaos",
+        "Magnus used psychic means to warn the Emperor",
+        "The psychic warning damaged the Imperial Webway project",
+        "The warning had catastrophic consequences"
+      ]
+    },
+    "metadata": {
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "question_type": "causal",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  }
+]

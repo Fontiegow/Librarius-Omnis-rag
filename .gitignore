@@ -128,3 +128,19 @@ Desktop.ini
 # ==============================
 *.local
 config.local.*
+
+# Local Vector Database
+qdrant_db/
+
+# Virtual Environment
+.venv/
+env/
+venv/
+
+# Model Files / Heavy Artifacts
+*.gguf
+Modelfile
+
+# Python cache
+__pycache__/
+*.pyc

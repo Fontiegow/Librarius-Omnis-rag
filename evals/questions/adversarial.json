@@ -1,0 +1,195 @@
+[
+  {
+    "id": "WH40K-061",
+    "question": "Did Sanguinius personally kill Horus during the Siege of Terra?",
+    "ground_truth": {
+      "answer": "No. Sanguinius fought Horus and wounded him, but the Emperor ultimately defeated and destroyed Horus.",
+      "key_facts": [
+        "Sanguinius fought Horus",
+        "Sanguinius wounded Horus",
+        "The Emperor ultimately defeated Horus"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "medium",
+      "question_type": "false_premise",
+      "retrieval_hops": 2,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-062",
+    "question": "Did the Emperor intentionally create the Primarchs to become Daemon Princes?",
+    "ground_truth": {
+      "answer": "No. The Primarchs were created for the Emperor's plans for humanity and the Great Crusade; some later became Daemon Princes after falling to Chaos.",
+      "key_facts": [
+        "The Primarchs were created by the Emperor",
+        "They were not created to become Daemon Princes",
+        "Several Traitor Primarchs later became Daemon Princes"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "easy",
+      "question_type": "false_premise",
+      "retrieval_hops": 2,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-063",
+    "question": "Was Magnus responsible for destroying the Emperor's Webway Project?",
+    "ground_truth": {
+      "answer": "Magnus's psychic intrusion catastrophically damaged the Webway project and forced the Emperor to personally contain the resulting breach, although the broader circumstances and responsibility are more nuanced.",
+      "key_facts": [
+        "Magnus entered the Emperor's Webway project psychically",
+        "The intrusion caused catastrophic damage",
+        "The Emperor had to respond to the breach",
+        "Responsibility should be described with appropriate nuance"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "hard",
+      "question_type": "loaded_premise",
+      "retrieval_hops": 3,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-064",
+    "question": "Did the Necrons create the Chaos Gods?",
+    "ground_truth": {
+      "answer": "No. The Chaos Gods arose from Warp phenomena and the emotions and psychic activity of sentient beings; the Necrons did not create them.",
+      "key_facts": [
+        "The Necrons did not create the Chaos Gods",
+        "Chaos Gods are Warp entities",
+        "The origins of Chaos predate or exist independently of the modern Necrons"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "medium",
+      "question_type": "false_premise",
+      "retrieval_hops": 2,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-065",
+    "question": "Was the Imperium already worshipping the Emperor as a god during the Great Crusade?",
+    "ground_truth": {
+      "answer": "Officially, no. The Emperor promoted a secular Imperial Truth during the Great Crusade and opposed religious worship, although some individuals continued to regard him as divine.",
+      "key_facts": [
+        "The Imperial Truth was officially secular",
+        "The Emperor opposed religious worship",
+        "Lorgar's religious devotion was condemned",
+        "The Imperial Cult became dominant later"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "medium",
+      "question_type": "false_premise",
+      "retrieval_hops": 3,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-066",
+    "question": "Did all Primarchs willingly participate in the Great Crusade?",
+    "ground_truth": {
+      "answer": "No. While the Primarchs generally participated in the Great Crusade, their attitudes and loyalty varied considerably, and some were eventually opposed to the Emperor.",
+      "key_facts": [
+        "The Primarchs had different personalities and attitudes",
+        "Some became Traitors",
+        "Not all had the same relationship with the Emperor"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "medium",
+      "question_type": "false_premise",
+      "retrieval_hops": 3,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-067",
+    "question": "Did the Emperor personally create every Space Marine Chapter?",
+    "ground_truth": {
+      "answer": "No. The Emperor created the Primarchs and the original Space Marine Legions, while later Chapters were created through Foundings and the division of Legions after the Horus Heresy.",
+      "key_facts": [
+        "The Emperor created the original Legions",
+        "The Second Founding created many Chapters",
+        "Guilliman's Codex Astartes influenced the Chapter system"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "easy",
+      "question_type": "false_premise",
+      "retrieval_hops": 3,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-068",
+    "question": "Was the Horus Heresy primarily a conflict between Space Marines?",
+    "ground_truth": {
+      "answer": "Space Marines and their Primarchs were central to the Heresy, but it was a much broader civil war involving the Imperial Army, Mechanicum, Titans, daemons, human populations, and many other forces.",
+      "key_facts": [
+        "Space Marines were central to the Heresy",
+        "The conflict involved many other military and civilian forces",
+        "The Mechanicum and Titan Legions played major roles"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "medium",
+      "question_type": "loaded_premise",
+      "retrieval_hops": 3,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-069",
+    "question": "Did the Eldar cause the creation of the Tyranids?",
+    "ground_truth": {
+      "answer": "No. There is no established lore showing that the Aeldari created the Tyranids. The Tyranids arrived from outside the Milky Way and their deeper origin remains unknown.",
+      "key_facts": [
+        "The Tyranids are extragalactic",
+        "Their origin is unknown",
+        "There is no established claim that the Aeldari created them"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "medium",
+      "question_type": "false_premise",
+      "retrieval_hops": 2,
+      "contains_false_premise": true
+    }
+  },
+  {
+    "id": "WH40K-070",
+    "question": "Is Abaddon a Primarch?",
+    "ground_truth": {
+      "answer": "No. Abaddon is a Chaos Space Marine and former First Captain of the Sons of Horus. He later became Warmaster of Chaos and leader of the Black Legion.",
+      "key_facts": [
+        "Abaddon is not a Primarch",
+        "He was First Captain of the Sons of Horus",
+        "He became Warmaster of Chaos",
+        "He leads the Black Legion"
+      ]
+    },
+    "metadata": {
+      "category": "adversarial",
+      "difficulty": "easy",
+      "question_type": "false_premise",
+      "retrieval_hops": 2,
+      "contains_false_premise": true
+    }
+  }
+]

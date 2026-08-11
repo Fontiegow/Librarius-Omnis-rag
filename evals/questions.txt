@@ -1,0 +1,80 @@
+WH40K-001: Who is the Primarch of the Ultramarines?
+WH40K-002: What is the homeworld of the Blood Angels?
+WH40K-003: Who is the current leader of the Adeptus Mechanicus?
+WH40K-004: What is the Black Library?
+WH40K-005: Who founded the Grey Knights?
+WH40K-006: What is the purpose of the Golden Throne?
+WH40K-007: Which Chaos God is associated with decay and disease?
+WH40K-008: What is a Space Marine Chapter?
+WH40K-009: Who is Roboute Guilliman?
+WH40K-010: What is the Eye of Terror?
+WH40K-011: Why did the Emperor create the Primarchs?
+WH40K-012: How did Horus become corrupted by Chaos?
+WH40K-013: What events led to the Siege of Terra?
+WH40K-014: Why did the Emperor fight Horus aboard the Vengeful Spirit?
+WH40K-015: How are the Grey Knights connected to the Horus Heresy?
+WH40K-016: Why is Cadia strategically important to the Imperium?
+WH40K-017: How did the destruction of Cadia contribute to the formation of the Great Rift?
+WH40K-018: What is the relationship between the Adeptus Mechanicus and the Imperium?
+WH40K-019: Why did the Space Wolves and Thousand Sons become enemies?
+WH40K-020: How did the Necrons become dormant for millions of years?
+WH40K-021: Compare the reasons Horus, Magnus, and Perturabo ultimately turned against the Emperor.
+WH40K-022: How did the Emperor's treatment of Magnus contribute to the destruction of Prospero?
+WH40K-023: Why did Magnus warn the Emperor?
+WH40K-024: Why was the Webway Project important to the Emperor's long-term plans?
+WH40K-025: How did the Horus Heresy fundamentally change the relationship between the Emperor and the Imperium?
+WH40K-026: Compare the philosophies of Roboute Guilliman and Lion El'Jonson regarding the Imperium's future.
+WH40K-027: How did the Fall of the Eldar shape the current state of the galaxy?
+WH40K-028: Explain the relationship between the C'tan, Necrons, and the War in Heaven.
+WH40K-029: Why is the Tyranid threat fundamentally different from the threats posed by Chaos and the Necrons?
+WH40K-030: How did the Great Rift change the strategic situation of the Imperium?
+WH40K-031: What is the difference between the Emperor's Children Legion and the Emperor's Children warband or forces in the modern era?
+WH40K-032: What is the difference between the Lion El'Jonson and the Dark Angels' Lion Guard?
+WH40K-033: How does the character Abaddon differ from the historical role of Horus?
+WH40K-034: What is the difference between the Eye of Terror and the Great Rift?
+WH40K-035: Distinguish between the major meanings of Black Legion in relevant lore contexts.
+WH40K-036: What is the difference between a Primarch and a Daemon Primarch?
+WH40K-037: How does the Imperium distinguish between a Space Marine Chapter, Legion, and successor Chapter?
+WH40K-038: What is the difference between the Old Ones and the Eldar?
+WH40K-039: Put the following events in chronological order: the Horus Heresy, the Fall of the Eldar, the Great Rift, the War in Heaven, and the Unification Wars.
+WH40K-040: What happened between the Emperor's creation of the Primarchs and the beginning of the Great Crusade?
+WH40K-041: What major events occurred between the Council of Nikaea and the Siege of Terra?
+WH40K-042: How did the Imperium change between the Great Crusade and the 41st Millennium?
+WH40K-043: What happened to the Primarchs after the Horus Heresy?
+WH40K-044: Which major events led from the Horus Heresy to the formation of the modern Space Marine Chapters?
+WH40K-045: Is the Emperor definitively a god in Warhammer 40k lore? Explain the competing perspectives.
+WH40K-046: What is the definitive identity of the mysterious author of the Lectitio Divinitatus?
+WH40K-047: How certain is Imperial lore about what actually happened during the Dark Age of Technology?
+WH40K-048: What do we actually know about the origins of the Emperor?
+WH40K-049: What caused the disappearance of the Lost Primarchs?
+WH40K-050: What exactly happened to the Sensei?
+WH40K-051: What is the definitive origin of the Tyranids?
+WH40K-052: What is beyond the eastern edge of the galaxy?
+WH40K-053: How much does the Imperium actually understand about the Necrons?
+WH40K-054: Are the Chaos Gods objectively real, or is their existence dependent on Warp phenomena?
+WH40K-055: According to The First Heretic, why did Lorgar turn against the Emperor?
+WH40K-056: According to Prospero Burns, how are the Space Wolves' attitudes toward the Thousand Sons portrayed?
+WH40K-057: What does The Master of Mankind reveal about the Emperor's Webway Project?
+WH40K-058: How does Know No Fear portray the Battle of Calth?
+WH40K-059: What does Betrayer reveal about Angron and Lorgar's relationship?
+WH40K-060: Compare how the Emperor is characterized in The Master of Mankind and another Horus Heresy novel.
+WH40K-061: Did Sanguinius personally kill Horus during the Siege of Terra?
+WH40K-062: Did the Emperor intentionally create the Primarchs to become Daemon Princes?
+WH40K-063: Was Magnus responsible for destroying the Emperor's Webway Project?
+WH40K-064: Did the Necrons create the Chaos Gods?
+WH40K-065: Was the Imperium already worshipping the Emperor as a god during the Great Crusade?
+WH40K-066: Did all Primarchs willingly participate in the Great Crusade?
+WH40K-067: Did the Emperor personally create every Space Marine Chapter?
+WH40K-068: Was the Horus Heresy primarily a conflict between Space Marines?
+WH40K-069: Did the Eldar cause the creation of the Tyranids?
+WH40K-070: Is Abaddon a Primarch?
+WH40K-071: How did the Emperor's Webway ambitions, Magnus's psychic warning, and the Burning of Prospero ultimately contribute to the Emperor becoming permanently bound to the Golden Throne?
+WH40K-072: Trace the relationship between the Fall of the Eldar, the birth of Slaanesh, the creation of the Eye of Terror, and the Eldar survivors' current civilization.
+WH40K-073: Explain how the Emperor's original vision for the Imperium differed from the Imperium that existed after the Horus Heresy.
+WH40K-074: Trace the evolution of the Space Marines from the original Legions to the post-Heresy Chapter system.
+WH40K-075: Compare the origins, motivations, and strategic objectives of Chaos, the Tyranids, the Necrons, and the Orks as threats to the Imperium.
+WH40K-076: Explain how the actions of Lorgar, Erebus, and Kor Phaeron contributed to the transformation of the Horus Heresy from a political rebellion into a Chaos-backed war.
+WH40K-077: How are the events surrounding Cadia, Abaddon, the Black Crusades, the 13th Black Crusade, and the Great Rift connected?
+WH40K-078: Compare the Emperor's relationship with Magnus, Lorgar, and Horus, and explain how those relationships contributed differently to the Heresy.
+WH40K-079: How did the Imperium's treatment of the Adeptus Mechanicus during the Great Crusade affect their relationship after the Horus Heresy?
+WH40K-080: How does the return of Guilliman change the political, military, and religious situation of the Imperium?

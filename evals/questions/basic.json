@@ -1,0 +1,188 @@
+[
+  {
+    "id": "WH40K-001",
+    "question": "Who is the Primarch of the Ultramarines?",
+    "ground_truth": {
+      "answer": "Roboute Guilliman.",
+      "key_facts": [
+        "Roboute Guilliman is the Primarch of the Ultramarines",
+        "He founded and led the Ultramarines Legion"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "factoid",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-002",
+    "question": "What is the homeworld of the Blood Angels?",
+    "ground_truth": {
+      "answer": "Baal is the homeworld of the Blood Angels.",
+      "key_facts": [
+        "Baal is the Blood Angels' homeworld",
+        "The Blood Angels are descended from Sanguinius"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "factoid",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-003",
+    "question": "Who is the current leader of the Adeptus Mechanicus?",
+    "ground_truth": {
+      "answer": "The Adeptus Mechanicus is led by the Fabricator-General of Mars.",
+      "key_facts": [
+        "The Fabricator-General is the senior leader of the Adeptus Mechanicus",
+        "The position is associated with Mars"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "factoid",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-004",
+    "question": "What is the Black Library?",
+    "ground_truth": {
+      "answer": "The Black Library is a mysterious Eldar repository containing vast knowledge, including knowledge concerning Chaos.",
+      "key_facts": [
+        "The Black Library is associated with the Aeldari",
+        "It contains extensive knowledge about Chaos and the Warp",
+        "Its location is hidden from most beings"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "definition",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-005",
+    "question": "Who founded the Grey Knights?",
+    "ground_truth": {
+      "answer": "The Grey Knights were created during the aftermath of the Horus Heresy, with their origins closely associated with Malcador the Sigillite and the Emperor's anti-Chaos plans.",
+      "key_facts": [
+        "The Grey Knights originated during the Horus Heresy era",
+        "Malcador played a major role in their creation",
+        "They were created specifically to combat Chaos"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "historical_fact",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-006",
+    "question": "What is the purpose of the Golden Throne?",
+    "ground_truth": {
+      "answer": "The Golden Throne sustains the Emperor and helps maintain the Astronomican while also containing the catastrophic consequences of the failed Imperial Webway project.",
+      "key_facts": [
+        "The Golden Throne sustains the Emperor",
+        "It is connected to the Astronomican",
+        "It is connected to the Imperial Webway project"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "definition",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-007",
+    "question": "Which Chaos God is associated with decay and disease?",
+    "ground_truth": {
+      "answer": "Nurgle.",
+      "key_facts": [
+        "Nurgle is the Chaos God associated with disease",
+        "Nurgle is associated with decay and corruption"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "factoid",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-008",
+    "question": "What is a Space Marine Chapter?",
+    "ground_truth": {
+      "answer": "A Space Marine Chapter is a major organizational unit of the Adeptus Astartes, normally consisting of roughly one thousand battle-brothers under the Codex Astartes model.",
+      "key_facts": [
+        "A Chapter is an organizational unit of Space Marines",
+        "The Codex Astartes established the standard post-Heresy structure",
+        "A Codex-compliant Chapter is nominally around one thousand Space Marines"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "definition",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-009",
+    "question": "Who is Roboute Guilliman?",
+    "ground_truth": {
+      "answer": "Roboute Guilliman is the Primarch of the Ultramarines and one of the Emperor's twenty Primarchs.",
+      "key_facts": [
+        "Guilliman is a Primarch",
+        "He is the Primarch of the Ultramarines",
+        "He authored the Codex Astartes"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "entity",
+      "retrieval_hops": 1,
+      "contains_false_premise": false
+    }
+  },
+  {
+    "id": "WH40K-010",
+    "question": "What is the Eye of Terror?",
+    "ground_truth": {
+      "answer": "The Eye of Terror is a massive Warp rift created by the Fall of the Aeldari and the birth of Slaanesh.",
+      "key_facts": [
+        "The Eye of Terror is a region where Warp and realspace overlap",
+        "It was created by the Fall of the Aeldari",
+        "The birth of Slaanesh created the catastrophic Warp disturbance"
+      ]
+    },
+    "metadata": {
+      "category": "basic",
+      "difficulty": "easy",
+      "question_type": "definition",
+      "retrieval_hops": 2,
+      "contains_false_premise": false
+    }
+  }
+]
