@@ -144,3 +144,7 @@ Modelfile
 # Python cache
 __pycache__/
 *.pyc
+
+# Streamlit agent skills (environment-specific symlinks)
+  .agents\skills/developing-with-streamlit
+  .claude\skills/developing-with-streamlit

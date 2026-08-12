@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # -------------------------------------------------------------------
+  # 1. Qdrant Vector Database
+  # -------------------------------------------------------------------
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: librarius_qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - librarius_net
+
+  # -------------------------------------------------------------------
+  # 2. Streamlit RAG Web Application
+  # -------------------------------------------------------------------
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: librarius_app
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    volumes:
+      # Mount HuggingFace cache so BGE-M3 isn't re-downloaded on every build
+      - hf_cache:/root/.cache/huggingface
+      # Mount data folder for persistence
+      - ./data:/app/data
+    extra_hosts:
+      # Allows the container to reach Ollama running on your Windows host
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - qdrant
+    networks:
+      - librarius_net
+
+# Persisted Docker Volumes
+volumes:
+  qdrant_data:
+  hf_cache:
+
+    # Shared Bridge Network
+networks:
+  librarius_net:
+    driver: bridge
