@@ -2,20 +2,32 @@ import torch
 from sentence_transformers import SentenceTransformer
 from typing import List, Union
 
+#class BGEEmbedder:
+#    def __init__(self, model_name: str = "BAAI/bge-m3", device: str = None):
+#        """
+#        Wrapper for BAAI/bge-m3 embedding model.
+#        Automatically selects CUDA (GPU) if available, otherwise defaults to CPU.
+#        """
+#        if device is None:
+#            self.device = "cuda" if torch.cuda.is_available() else "cpu"
+#        else:
+#            self.device = device
+#            
+#        print(f"Loading embedding model '{model_name}' on device: '{self.device}'...")
+#        self.model = SentenceTransformer(model_name, device=self.device)
+#        print("Model loaded successfully.")
+
 class BGEEmbedder:
-    def __init__(self, model_name: str = "BAAI/bge-m3", device: str = None):
+    def __init__(self, model_name: str = "BAAI/bge-m3", device: str = "cpu"):
         """
         Wrapper for BAAI/bge-m3 embedding model.
-        Automatically selects CUDA (GPU) if available, otherwise defaults to CPU.
+        Defaults to CPU to preserve GPU VRAM for Ollama generation.
         """
-        if device is None:
-            self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        else:
-            self.device = device
+        self.device = device
             
         print(f"Loading embedding model '{model_name}' on device: '{self.device}'...")
         self.model = SentenceTransformer(model_name, device=self.device)
-        print("Model loaded successfully.")
+        print("Model loaded successfully.")        
 
     def embed_texts(self, texts: List[str], batch_size: int = 32) -> List[List[float]]:
         """

@@ -1,7 +1,7 @@
 import json
 import os
 import time
-from embeddings.test_bge import BGEEmbedder
+from src.embeddings.bge import BGEEmbedder  # Fixed import path
 from src.vectorstore.qdrant import QdrantVectorStore
 
 CHUNKS_FILE = "data/processed/chunks.json"
@@ -27,12 +27,12 @@ def main():
     embeddings = embedder.embed_texts(texts, batch_size=32)
     print(f"Generated {len(embeddings)} vectors in {time.time() - start_time:.2f} seconds.")
 
-    # 4. Initialize Qdrant and Index Data
+    # 4. Initialize Qdrant (HTTP) and Index Data
     vector_store = QdrantVectorStore()
     vector_store.create_collection()
     vector_store.upsert_chunks(chunks, embeddings)
 
-    print("\n[SUCCESS] Knowledge Base built and indexed in local Qdrant database!")
+    print("\n[SUCCESS] Knowledge Base built and indexed in Docker Qdrant database!")
 
 if __name__ == "__main__":
     main()

@@ -1,12 +1,20 @@
+import os
 import ollama
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 class LoreGenerator:
-    def __init__(self, model_name: str = "qwen2.5:3b"):
+    def __init__(self, model_name: str = "qwen2.5:3b", host: Optional[str] = None):
         """
         Wrapper for local LLM generation using Ollama.
+        Supports explicit host targeting or OLLAMA_HOST environment variable.
         """
         self.model_name = model_name
+        
+        # Fallback hierarchy: Explicit arg -> Environment variable -> Default local fallback
+        self.host = host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        
+        # Instantiate explicit Ollama client targeting the designated host URL
+        self.client = ollama.Client(host=self.host)
 
     def construct_prompt(self, query: str, retrieved_chunks: List[Dict[str, Any]]) -> str:
         """
@@ -30,11 +38,11 @@ class LoreGenerator:
 
     def generate_answer(self, query: str, retrieved_chunks: List[Dict[str, Any]]) -> str:
         """
-        Sends the augmented prompt to the local Ollama instance and returns the generated answer.
+        Sends the augmented prompt to the designated Ollama instance and returns the generated answer.
         """
         prompt = self.construct_prompt(query, retrieved_chunks)
         
-        response = ollama.generate(
+        response = self.client.generate(
             model=self.model_name,
             prompt=prompt,
             options={
