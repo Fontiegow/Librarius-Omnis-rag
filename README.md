@@ -1,10 +1,6 @@
-Here is a structured, production-ready `README.md` file tailored for your repository. It incorporates the complete technical architecture from your report along with the evaluation dataset breakdown you provided.
-
----
-
 # Librarius Omnis — Domain-Specific Local RAG System
 
-**Librarius Omnis** is a privacy-first, 100% offline Retrieval-Augmented Generation (RAG) system engineered to process, index, and query dense Warhammer 40,000 lore. Built to run locally on consumer-grade hardware with strict memory constraints, it leverages GPU acceleration for embeddings and local LLM execution via Ollama.
+**Librarius Omnis** is a privacy-first, 100% offline Retrieval-Augmented Generation (RAG) system engineered to process, index, and query dense Warhammer 40,000 lore. Built for local execution on consumer-grade hardware, it pairs a custom Streamlit imperial cogitator terminal with a Dockerized Qdrant vector database and host GPU acceleration via Ollama.
 
 ---
 
@@ -12,22 +8,23 @@ Here is a structured, production-ready `README.md` file tailored for your reposi
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────────┐
-│                               OFFLINE INGESTION                                   │
+│                                OFFLINE INGESTION                                  │
 │                                                                                   │
-│  [Raw Documents] ──► [Cleaner & Chunker] ──► [Chunks] ──► (1) BGE-M3 (GPU)        │
-│                                                                  │                │
-│                                                                  ▼                │
-│  [qdrant_db/ Storage] ◄─────────────────────────────── (2) Index in Qdrant Vector DB
+│  [Raw Documents] ──► [Cleaner & Chunker] ──► [Chunks] ──► (1) BGE-M3 (CPU/CUDA)   │
+│                                                                 │                 │
+│                                                                 ▼                 │
+│  [Qdrant Docker Volume] ◄───────────────────────────── (2) Index via HTTP (6333)  │
 └───────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
+                                          │
+                                          ▼
 ┌───────────────────────────────────────────────────────────────────────────────────┐
-│                               ONLINE RETRIEVAL                                    │
+│                            ONLINE RETRIEVAL & STREAMLIT                           │
 │                                                                                   │
-│  User Query ─────────► (3) BGE-M3 (GPU) ──► (4) Cosine Similarity Search in Qdrant│
-│                                                                  │                │
-│                                                                  ▼                │
-│  Response ◄── (7) Output ◄── (6) Prompt ◄── Ollama Qwen2.5 ◄── (5) Relevant Chunks│
+│  User Input (Streamlit UI) ──► (3) BGE-M3 Embedder ──► (4) Qdrant Vector Search   │
+│                                                                 │                 │
+│                                                                 ▼                 │
+│  Output Display ◄── (7) Response ◄── Ollama Qwen2.5 ◄── (5) Top-K Chunks + Context │
+│  & Timeline Sync     (Host GPU)      (host.docker.internal)                       │
 └───────────────────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -36,130 +33,159 @@ Here is a structured, production-ready `README.md` file tailored for your reposi
 
 ## Key Features
 
-* **100% Offline & Private:** Zero cloud dependencies; all vectors and LLM inferences execute locally.
-* **Low VRAM Optimization:** Tailored for consumer GPUs (e.g., RTX 3050 4GB VRAM) using 4-bit quantized local models.
-* **Dense Semantic Embeddings:** Uses `BAAI/bge-m3` running on CUDA to map lore text into 1024-dimensional vectors.
-* **Embedded Vector Database:** Disk-persisted local Qdrant collection with Cosine similarity indexing.
-* **Grounded Generation:** Enforces strict context grounding with low temperature ($0.2$) via Ollama's `Qwen2.5-3B-Instruct`.
+* **Interactive Imperial Web Interface:** Styled Streamlit dashboard ("Librarius Omnis") featuring background art randomization, telemetry metric boxes, source document inspect expanders, and dynamic lore timeline parsing (M30–M42).
+* **Multi-Container Architecture:** Completely containerized using Docker Compose (`rag-app` and `qdrant`), decoupling local storage dependencies from host OS lock files.
+* **Host GPU Acceleration:** Uses Docker `host-gateway` bridge (`host.docker.internal`) to route LLM inference calls directly to host-level GPU-accelerated Ollama instances.
+* **Native Thread Safety:** Enforces single-threaded OpenMP/MKL constraints at application entry to prevent Windows native C++ matrix math crashes (`0xC0000005` access violations) during PyTorch initialization.
+* **100% Offline & Private:** Zero cloud API dependencies; embeddings, vectors, and generation execute completely locally.
 
 ---
 
-## Data Pipeline & Ingestion
+## Environment Variables & Configuration
 
-1. **Preprocessing:** Strips control characters, normalizes line breaks, and enforces paragraph boundaries across over 1.8M characters of raw lore text.
-2. **Sliding Window Chunking:** Divides documents into **2,762 chunks** with an 800-character window and a 150-character overlap to preserve entity names and semantic continuity across boundaries.
-3. **Vector Indexing:** Batch-embeds text chunks onto local GPU memory and persists them inside `./qdrant_db/` along with metadata payloads.
+The application dynamically detects its deployment environment using the following variables:
 
----
-
-## Evaluation Benchmark Suite (`evals/`)
-
-The repository includes a benchmark dataset designed to evaluate retrieval precision and generation fidelity across various query types.
-
-### Dataset Overview
-
-* **Total Evaluation Questions:** 80
-* **Structure:** Each item in the dataset contains:
-* `id`: Unique identifier
-* `question`: The input evaluation query
-* `ground_truthanswer`: The verified reference answer
-* `key_facts`: Crucial lore facts required for a correct answer
-* `metadatacategory`: Category classification
-* `difficulty`: Metric difficulty rating
-* `question_type`: Query structure classification
-* `retrieval_hops`: Number of document contexts required to answer
-* `contains_false_premise`: Boolean flag for trick/adversarial questions
-
-
-
-### Query Categories
-
-* **Basic:** Standard, straightforward lore retrieval questions.
-* **Multi-hop:** Complex queries requiring context assembly from multiple lore documents.
-* **Adversarial:** Questions containing misleading assumptions or false premises to test hallucination resistance.
-* **Chronology:** Temporal questions testing historical timelines and event sequences.
-
-### File Structure (`evals/`)
-
-```text
-evals/
-├── questions.json      # Complete dataset with full metadata schemas
-├── questions.txt       # Plain text list of raw evaluation queries
-└── questions/          # Directory containing category-specific subsets
-
-```
-
----
-
-## Quick Start
-
-### 1. Prerequisites
-
-* Python 3.10+
-* CUDA-compatible GPU (NVIDIA RTX 3050 or higher recommended)
-* [Ollama](https://ollama.ai/) installed locally
-
-### 2. Installation
-
-Clone the repository and install the dependencies:
-
-```bash
-git clone https://github.com/your-username/librarius-omnis-rag.git
-cd librarius-omnis-rag
-
-# Activate your virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install PyTorch with CUDA support and dependencies
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
-pip install qdrant-client sentence-transformers ollama huggingface_hub
-
-```
-
-### 3. Register local LLM model in Ollama
-
-If using a custom downloaded GGUF file:
-
-```bash
-ollama create qwen2.5:3b -f Modelfile
-
-```
-
-### 4. Build Vector Index
-
-Process raw data and generate local Qdrant vectors:
-
-```bash
-python build_index.py
-
-```
-
-### 5. Run RAG Engine
-
-Launch the interactive command-line interface:
-
-```bash
-python main_rag.py
-
-```
+| Variable | Default Value | Description |
+| --- | --- | --- |
+| `QDRANT_HOST` | `localhost` | Hostname/IP of the Qdrant service (`qdrant` inside Docker) |
+| `QDRANT_PORT` | `6333` | HTTP port for the Qdrant vector database |
+| `OLLAMA_HOST` | `http://localhost:11434` | Endpoint for the Ollama inference engine (`[http://host.docker.internal:11434](http://host.docker.internal:11434)` in Docker) |
+| `OMP_NUM_THREADS` | `1` | OpenMP thread limit (prevents C++ worker thread collisions) |
+| `TOKENIZERS_PARALLELISM` | `false` | Disables Hugging Face tokenizer thread parallelism |
 
 ---
 
 ## Project Structure
 
 ```text
+├── assets/
+│   └── backgrounds/        # Visual assets and background images for Streamlit UI
 ├── data/
-│   ├── raw/               # 10 raw lore source text files
-│   └── processed/         # Generated chunks.json artifact
-├── evals/                 # Benchmark dataset (80 structured questions)
+│   ├── raw/                # Raw source text files (.txt)
+│   └── processed/          # Generated chunks.json artifact
+├── evals/                  # Benchmark dataset (80 structured evaluation questions)
+│   ├── questions.json
+│   ├── questions.txt
+│   └── questions/          # Category-specific evaluation subsets
 ├── src/
-│   ├── embeddings/        # BGE-M3 CUDA embedding wrapper
-│   ├── retrieval/         # Qdrant search and retrieval logic
-│   └── generation/        # Ollama prompt builder and generator
-├── build_index.py         # Offline vector database ingestion pipeline
-├── main_rag.py            # Main interactive RAG CLI orchestrator
-├── Modelfile              # Ollama model definition file
-└── README.md              # Project documentation
+│   ├── embeddings/         # BGE-M3 embedding wrapper
+│   ├── retrieval/          # LoreRetriever (Qdrant client integration)
+│   └── generation/         # LoreGenerator (Ollama client integration)
+├── app.py                  # Main Streamlit web application & UI orchestrator
+├── build_index.py          # Vector database ingestion pipeline script
+├── Dockerfile              # Container definition for Streamlit RAG application
+├── docker-compose.yml      # Orchestration for Qdrant and RAG application services
+├── .dockerignore           # Excludes heavy local venvs and build caches from Docker context
+├── Modelfile               # Ollama custom model definition file
+├── requirements.txt        # Python dependency manifest
+└── README.md               # Project documentation
 
-```# Librarius-Omnis-rag
+```
+
+---
+
+## Data Pipeline & Ingestion
+
+1. **Preprocessing:** Strips control characters, normalizes line breaks, and enforces structural boundaries across over 1.8M characters of raw lore text.
+2. **Sliding Window Chunking:** Divides documents into **2,762 chunks** with an 800-character window and a 150-character overlap to preserve entity names and semantic context.
+3. **HTTP Vector Indexing:** Batch-embeds text chunks using `BAAI/bge-m3` and persists 1024-dimensional vectors directly into the Qdrant instance via HTTP payload.
+
+---
+
+## Evaluation Benchmark Suite (`evals/`)
+
+The repository includes an evaluation benchmark designed to measure retrieval precision and generation fidelity across four query categories:
+
+### Query Breakdown
+
+* **Basic:** Standard, single-entity lore retrieval questions.
+* **Multi-hop:** Complex queries requiring context synthesis across multiple documents.
+* **Adversarial:** Misleading questions with false premises to test hallucination resistance.
+* **Chronology:** Timeline questions testing historical sequences (e.g., Great Crusade vs. Era Indomitus).
+
+---
+
+## Quick Start
+
+### Option A: Deployment via Docker Compose (Recommended)
+
+#### 1. Configure Host Ollama
+
+Ensure local Ollama accepts requests from Docker containers. In Windows PowerShell:
+
+```powershell
+$env:OLLAMA_ORIGINS="*"
+ollama serve
+
+```
+
+Ensure your desired local model is pulled:
+
+```powershell
+ollama pull qwen2.5:3b
+
+```
+
+#### 2. Launch Stack via Docker Compose
+
+From the repository root, start both the `qdrant` vector database and `rag-app` containers:
+
+```bash
+docker compose up --build -d
+
+```
+
+#### 3. Populate Vector Database (First Time Only)
+
+Run the ingestion pipeline inside the running application container:
+
+```bash
+docker compose exec rag-app python build_index.py
+
+```
+
+#### 4. Access Terminal Interface
+
+Open your browser and navigate to `http://localhost:8501`.
+
+---
+
+### Option B: Local Development Setup (Native Python)
+
+#### 1. Prerequisites
+
+* Python 3.10+
+* Local [Qdrant Container](https://hub.docker.com/r/qdrant/qdrant) running on port `6333`
+* [Ollama](https://ollama.ai/) running locally
+
+#### 2. Installation
+
+```bash
+# Clone repository
+git clone https://github.com/your-username/librarius-omnis-rag.git
+cd librarius-omnis-rag
+
+# Setup virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+```
+
+#### 3. Build Vector Index
+
+Ensure Qdrant is running (`docker run -p 6333:6333 qdrant/qdrant`), then execute:
+
+```bash
+python build_index.py
+
+```
+
+#### 4. Run Streamlit App
+
+```bash
+streamlit run app.py
+
+```
